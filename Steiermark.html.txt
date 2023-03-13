@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Countdown bis zum 3. Januar 2308</title>
+    <style>
+      #countdown {
+        font-size: 3em;
+      }
+    </style>
+    <script>
+      function berechneVerbleibendeZeit() {
+        var jetzt = new Date().getTime();
+        var ziel = new Date('2308-01-03').getTime();
+        var differenz = ziel - jetzt;
+        var tage = Math.floor(differenz / (1000 * 60 * 60 * 24));
+        var stunden = Math.floor((differenz % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minuten = Math.floor((differenz % (1000 * 60 * 60)) / (1000 * 60));
+        var sekunden = Math.floor((differenz % (1000 * 60)) / 1000);
+        document.getElementById('countdown').innerHTML = tage + ' Tage, ' + stunden + ' Stunden, ' + minuten + ' Minuten, ' + sekunden + ' Sekunden';
+      }
+      setInterval(berechneVerbleibendeZeit, 1000);
+    </script>
+  <title>unter der annahme, dass die freie Fläche Steiermarks 2184km^2 hat und täglich 2,1ha versiegelt werden.</title>
+  </head>
+  <body>
+    <h1>Countdown bis zum 14. Januar 2025:</h1>
+    <p id="countdown"></p>
+  </body>
+</html>
